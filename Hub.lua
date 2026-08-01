@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Vodra Hub - Liberação</title>
+    <style>
+        body { background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+        .btn { background-color: #00aaﬀ; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; margin: 10px; }
+        .btn:disabled { background-color: #555; cursor: not-allowed; }
+        .hidden { display: none; }
+        #script-box { background: #2b2b2b; padding: 15px; border-radius: 8px; display: inline-block; margin-top: 20px; width: 80%; max-width: 500px; word-break: break-all; }
+    </style>
+</head>
+<body>
+
+    <h1>⚡ VODRA HUB - LIBERAÇÃO ⚡</h1>
+    <p>Complete as etapas abaixo para liberar o seu loadstring:</p>
+
+    <div id="step1-container">
+        <button class="btn" id="btn1" onclick="fazerEtapa(1, 'https://youtu.be/DcYpmMBdt5s?is=rhYLsL3C4qKG5Iin')">1. Inscrever-se no Canal</button>
+    </div>
+
+    <div id="step2-container" class="hidden">
+        <button class="btn" id="btn2" onclick="fazerEtapa(2, 'https://youtu.be/DcYpmMBdt5s?is=rhYLsL3C4qKG5Iin')">2. Dar Like no Vídeo</button>
+    </div>
+
+    <div id="step3-container" class="hidden">
+        <button class="btn" id="btn3" onclick="fazerEtapa(3, 'https://youtu.be/DcYpmMBdt5s?is=rhYLsL3C4qKG5Iin')">3. Comentar no Vídeo</button>
+    </div>
+
+    <div id="final-container" class="hidden">
+        <h3>Prabéns! Aqui está o seu loadstring:</h3>
+        <div id="script-box">
+            <code>loadstring(game:HttpGet("SEU_LINK_AQUI"))()</code>
+        </div>
+    </div>
+
+    <script>
+        function fazerEtapa(etapa, url) {
+            window.open(url, '_blank');
+            document.getElementById('btn' + etapa).disabled = true;
+            document.getElementById('btn' + etapa).innerText = "Verificado com sucesso! ✅";
+
+            setTimeout(function() {
+                if (etapa === 1) {
+                    document.getElementById('step2-container').classList.remove('hidden');
+                } else if (etapa === 2) {
+                    document.getElementById('step3-container').classList.remove('hidden');
+                } else if (etapa === 3) {
+                    document.getElementById('final-container').classList.remove('hidden');
+                }
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>

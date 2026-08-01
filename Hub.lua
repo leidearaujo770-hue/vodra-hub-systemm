@@ -31,7 +31,8 @@
     <div id="final-container" class="hidden">
         <h3>Prabéns! Aqui está o seu loadstring:</h3>
         <div id="script-box">
-            <code>loadstring(game:HttpGet("SEU_LINK_AQUI"))()</code>
+            <code>loadstring(game:HttpGet("https://raw.githubusercontent.com/leidearaujo770-hue/Zombie-Rush-Survival/main/ZombieRushSurvival.lua"))()
+</code>
         </div>
     </div>
 

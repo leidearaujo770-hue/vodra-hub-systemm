@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Vodra Hub - Liberação</title>
     <style>
-        body { background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-        .btn { background-color: #00aaﬀ; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; margin: 10px; }
+        body { background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif; text-align: center; padding-top: 30px; }
+        .btn { background-color: #00aaff; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; margin: 10px; }
         .btn:disabled { background-color: #555; cursor: not-allowed; }
         .hidden { display: none; }
-        #script-box { background: #2b2b2b; padding: 15px; border-radius: 8px; display: inline-block; margin-top: 20px; width: 80%; max-width: 500px; word-break: break-all; }
+        #script-box { background: #2b2b2b; padding: 15px; border-radius: 8px; display: inline-block; margin-top: 20px; width: 85%; max-width: 500px; word-break: break-all; text-align: left; }
         .copy-btn { background-color: #28a745; margin-top: 10px; }
+        code { color: #50fa7b; }
     </style>
 </head>
 <body>
@@ -18,21 +19,21 @@
     <p>Complete as etapas abaixo para liberar o seu loadstring:</p>
 
     <div id="step1-container">
-        <button class="btn" id="btn1" onclick="fazerEtapa(1, 'https://youtu.be/DcYpmMBdt5s?is=rhYLsL3C4qKG5Iin')">1. Inscrever-se no Canal</button>
+        <button class="btn" id="btn1" onclick="fazerEtapa(1, 'https://youtu.be/DcYpmMBdt5s')">1. Inscrever-se no Canal</button>
     </div>
 
     <div id="step2-container" class="hidden">
-        <button class="btn" id="btn2" onclick="fazerEtapa(2, 'https://youtu.be/DcYpmMBdt5s?is=rhYLsL3C4qKG5Iin')">2. Dar Like no Vídeo</button>
+        <button class="btn" id="btn2" onclick="fazerEtapa(2, 'https://youtu.be/DcYpmMBdt5s')">2. Dar Like no Vídeo</button>
     </div>
 
     <div id="step3-container" class="hidden">
-        <button class="btn" id="btn3" onclick="fazerEtapa(3, 'https://youtu.be/DcYpmMBdt5s?is=rhYLsL3C4qKG5Iin')">3. Comentar no Vídeo</button>
+        <button class="btn" id="btn3" onclick="fazerEtapa(3, 'https://youtu.be/DcYpmMBdt5s')">3. Comentar no Vídeo</button>
     </div>
 
     <div id="final-container" class="hidden">
         <h3>Parabéns! Aqui está o seu loadstring:</h3>
         <div id="script-box">
-            <code id="loadstring-texto">loadstring(game:HttpGet("COLE_O_SEU_LINK_RAW_AQUI"))()</code>
+            <code id="loadstring-texto">loadstring(game:HttpGet("https://raw.githubusercontent.com/leidearaujo770-hue/Zombie-Rush-Survival/main/ZombieRushSurvival.lua"))()</code>
         </div>
         <br>
         <button class="btn copy-btn" onclick="copiarTexto()">Copiar Loadstring 📋</button>
@@ -56,8 +57,7 @@
         }
 
         function copiarTexto() {
-            const texto = document.getElementById('loadstring(game:HttpGet("https://raw.githubusercontent.com/leidearaujo770-hue/Zombie-Rush-Survival/main/ZombieRushSurvival.lua"))()
-').innerText;
+            const texto = document.getElementById('loadstring-texto').innerText;
             navigator.clipboard.writeText(texto).then(() => {
                 alert('Loadstring copiado com sucesso!');
             });

@@ -9,6 +9,7 @@
         .btn:disabled { background-color: #555; cursor: not-allowed; }
         .hidden { display: none; }
         #script-box { background: #2b2b2b; padding: 15px; border-radius: 8px; display: inline-block; margin-top: 20px; width: 80%; max-width: 500px; word-break: break-all; }
+        .copy-btn { background-color: #28a745; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -29,11 +30,12 @@
     </div>
 
     <div id="final-container" class="hidden">
-        <h3>Prabéns! Aqui está o seu loadstring:</h3>
+        <h3>Parabéns! Aqui está o seu loadstring:</h3>
         <div id="script-box">
-            <code>loadstring(game:HttpGet("https://raw.githubusercontent.com/leidearaujo770-hue/Zombie-Rush-Survival/main/ZombieRushSurvival.lua"))()
-</code>
+            <code id="loadstring-texto">loadstring(game:HttpGet("COLE_O_SEU_LINK_RAW_AQUI"))()</code>
         </div>
+        <br>
+        <button class="btn copy-btn" onclick="copiarTexto()">Copiar Loadstring 📋</button>
     </div>
 
     <script>
@@ -51,6 +53,14 @@
                     document.getElementById('final-container').classList.remove('hidden');
                 }
             }, 3000);
+        }
+
+        function copiarTexto() {
+            const texto = document.getElementById('loadstring(game:HttpGet("https://raw.githubusercontent.com/leidearaujo770-hue/Zombie-Rush-Survival/main/ZombieRushSurvival.lua"))()
+').innerText;
+            navigator.clipboard.writeText(texto).then(() => {
+                alert('Loadstring copiado com sucesso!');
+            });
         }
     </script>
 
